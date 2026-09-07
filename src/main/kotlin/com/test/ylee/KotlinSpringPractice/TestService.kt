@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service
 @Service
 class TestService() {
 
-    val mockList: List<TestResponse> = listOf(
+    val mockList: MutableList<TestResponse> = mutableListOf(
         TestResponse(1, "아아", 1800),
         TestResponse(2, "뜨아", 1600),
         TestResponse(3, "라떼", 2000),
         TestResponse(4, "초코", 2500),
         TestResponse(5, "아티", 2200),
     )
-    
+
     fun getHello(): String {
         return "Hello ylee"
     }
@@ -25,5 +25,12 @@ class TestService() {
 
     fun getTestByIndex(idx: Int): TestResponse? {
         return mockList.getOrNull(idx)
+    }
+
+    fun addTest(request: TestRequest): TestResponse {
+        val nextId = (mockList.maxOfOrNull { it.id } ?: 0) + 1
+        val created = TestResponse(nextId, request.name, request.price)
+        mockList.add(created)
+        return created
     }
 }
