@@ -1,0 +1,13 @@
+package com.test.ylee.KotlinSpringPractice
+
+import org.junit.jupiter.api.Test
+import org.springframework.boot.test.context.SpringBootTest
+
+@SpringBootTest
+class KotlinSpringPracticeApplicationTests {
+
+	@Test
+	fun contextLoads() {
+	}
+
+}
