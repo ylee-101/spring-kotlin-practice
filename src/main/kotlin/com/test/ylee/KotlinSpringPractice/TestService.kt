@@ -12,7 +12,7 @@ class TestService() {
         TestResponse(2, "뜨아", 1600),
         TestResponse(3, "라떼", 2000),
         TestResponse(4, "초코", 2500),
-        TestResponse(5, "아티", 2200),
+        TestResponse(5, "아티", 2200)
     )
     
     fun getHello(): String {

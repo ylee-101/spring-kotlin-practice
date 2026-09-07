@@ -10,7 +10,7 @@ import com.test.ylee.KotlinSpringPractice.TestService
 
 @RestController
 class TestController(
-    val testService : TestService
+    private val testService : TestService
 ) {
 
     @GetMapping("/hello")
